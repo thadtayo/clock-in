@@ -1,0 +1,26 @@
+START: 2020-05-27 15:44:36.162755
+Trying to run DeepSqueak training detection model... Running into errors.
+Got the thing working so far. Currently running. It failed when I tried training alone or with Mouse Call network, but worked with All Short... Idk why.
+Just ran it through; it failed on second step. "Error using gpuArray/hTimesTranspose \ Call to sgemm in CUBLAS failed with error status:CUBLAS_STATUS_EXECUTION_FAILED.
+STOP: 2020-05-27 15:58:01.129893
+TIME WORKED: 0:13:24.967138
+It worked. I think that the errors might be some time of GPU overload... I tried to just train the model 1-by-1 instead and it worked fine. I also just redid it using all the tables at once and it worked. Tomorrow (5/28/20) will be all DeepSqueak.
+START: 2020-05-28 12:07:11.602682
+Gonna start up DeepSqueak stuff today. See where I'm at, see what else I need to do.
+I see I've finished my detection network. I'm gonna run it on T000002 and see how well it did.
+Ran on T000002. Detected 275 calls vs the 365 manual inputs.
+I ran T00002 through the default Mouse_Call_Network_V2 and it generated 287. This might be more promising -- will train a neural network on that and see what happens.
+Ran custom-trained Mouse_Call_Network_V2 on T000002, produced 262 calls. Still trying to figure out which is best.
+Training network from scratch using OPA data. Let's see how it works.
+195 calls detected from network_from_scratch on T000002. Going to take a break from detection networks, see what I can do with Post Hoc Denoising.
+Custom_Trained_On Mouse_Call_Network with high recall slider all the way up results in 356 calls. Most accurate. (Might be due to bias in already seeing T00002 but whatever. Works for me.)
+Going back and relabeling all noises as Noise, as negatives for Post Hoc Denoising.
+Trained a Post Hoc Denoiser. Didn't try to see if it worked well. I think it did. Don't have anything good to test it on considering none of the detections really have a lot of noise.
+Think I'm done now with DeepSqueak. Taking a break and gonna work on the pipeline now.
+STOP: 2020-05-28 13:51:52.621438
+TIME WORKED: 1:44:41.018756
+START: 2020-05-29 11:12:00.412497
+Going to finish generate_stats_group.
+Finished generate_stats_group. Taking break, going to move on to entry.py to add functionality to choose their own group.
+STOP: 2020-05-29 14:10:46.670855
+TIME WORKED: 2:58:46.258358
