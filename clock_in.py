@@ -22,7 +22,7 @@ def clock(start, stop, message):
         if last_time != '':
             print('Already ran start.')
             exit()
-        f.write('START: ' + str(now) + '\n')
+        f.write('START: ' + str(now) + '\n\n')
         m.write(str(now))
     
     if stop:
@@ -32,17 +32,17 @@ def clock(start, stop, message):
         if last_time == '':
             print('Run start first.')
             exit()
-        f.write('STOP: ' + str(now) + '\n')
+        f.write('STOP: ' + str(now) + '\n\n')
         
         last_time = datetime.datetime.strptime(last_time, '%Y-%m-%d %H:%M:%S.%f')
         delta_time = now - last_time
-        f.write('TIME WORKED: ' + str(delta_time) + '\n')
+        f.write('TIME WORKED: ' + str(delta_time) + '\n\n')
 
         m.truncate(0)
 
     
     if message:
-        f.write(message + '\n')
+        f.write(message + '\n\n')
 
 
 
